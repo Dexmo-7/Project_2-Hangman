@@ -1,20 +1,22 @@
-#info początkowe o grze
+#Informations about the game
 #-----------------------
+#Variables:
+#n - letter which is choose by a Gamer
+#passwd - password which is guess by a Gamer
+#unpasswd - hidden password which is cover by stars
+#counter - main counter, when Gamer has more than 6 then lost
+#innerCounter - counter which show Gamer chose good letter, if not the main counter will be increased
+#game_set - when game_set is False, game is over (bad or good way)
 
-#Zmienne do gry:
-#n - wybrana przez gracza litera
-#passwd - hasło do odgadnięcia przez gracza
-#unpasswd - zakryte hasło gry, litery zmienione na gwiazdki
-#counter - licznik odmierzający błędne litery, jeśli counter>=7, to gracz przegrywa
-#game_set - gdy wartość wyniesie false, gra zostaje przerwana
-
-#Stars appearing
+#Starting conditions
 game_set = True
 counter = 0
 
 #Stars appearing
+print("Polish singer")
 listPasswd = list("Zbigniew Wodecki".upper())
 strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
+print(strUnpasswd)
 
 while game_set:
 
@@ -42,7 +44,5 @@ while game_set:
     
     if "*" not in listUnpasswd:
         game_set = False
-        print("Congratulation! You win!")
-    
-    #print(strUnpasswd)
+        print("Congratulation! You won!")
     
