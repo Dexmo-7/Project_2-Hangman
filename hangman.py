@@ -18,8 +18,8 @@ listPasswd = list("Zbigniew Wodecki".upper())
 strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
 print(strUnpasswd)
 
-while game_set:
 
+while game_set:
     #Checking loop for main condition if n==letter_from_passwd
     listUnpasswd = list(strUnpasswd)
     n = input("Enter a letter: ").upper()
