@@ -7,8 +7,19 @@
 #unpasswd - zakryte hasło gry, litery zmienione na gwiazdki
 #counter - licznik odmierzający błędne litery, jeśli counter>=7, to gracz przegrywa
 
-passwd = list("Zbigniew Wodecki")
-unpasswd = ''.join(["*" if item.isalpha() else ' ' for item in passwd])
-unpasswd=(" ").join(unpasswd)
-print(''.join(passwd))
-print(unpasswd)
+#Stars appearnig
+
+listPasswd = list("Zbigniew Wodecki")
+strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
+
+"""
+print(''.join(listPasswd))
+print(strUnpasswd)
+print(list(strUnpasswd))
+
+
+listUnpasswd = list(unpasswd)
+n = input("Enter a letter: ")
+for num, item in enumerate(passwd):
+    if n==item:
+"""
