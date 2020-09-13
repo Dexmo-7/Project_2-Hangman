@@ -20,8 +20,14 @@ strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
 print(strUnpasswd)
 
 while game_con:
-    print(""
-    while game_set:
+    print("Hello! What do you want to do?")
+    print("1. Enter any key")
+    print("2. Enter Q to quit")
+    remote_control = input().upper()
+    if remote_control == "Q":
+        game_con = False
+    
+    while game_set & game_con:
 
         #Checking loop for main condition if n==letter_from_passwd
         listUnpasswd = list(strUnpasswd)
