@@ -14,22 +14,27 @@ game_con = True
 counter = 0
 
 #Stars appearing
-print("Polish singer")
+#print("Polish singer")
 listPasswd = list("Zbigniew Wodecki".upper())
 strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
-print(strUnpasswd)
+#print(strUnpasswd)
 
 while game_con:
-    print("Hello! What do you want to do?")
-    print("1. Enter any key")
-    print("2. Enter Q to quit")
-    remote_control = input().upper()
-    if remote_control == "Q":
+    #Some text to make the game more interactive
+    print("Hello! Choose game mode:")
+    print("1. Singers")
+    print("2. EXIT")
+    
+    remote_control = input()
+    if remote_control == "2":
         game_con = False
     
     while game_set & game_con:
-
-        #Checking loop for main condition if n==letter_from_passwd
+        
+        #Taking the passwd from list and display it
+        
+        
+        #Checking loop for condition if n==letter_from_passwd
         listUnpasswd = list(strUnpasswd)
         n = input("Enter a letter: ").upper()
         innerCounter = 0
