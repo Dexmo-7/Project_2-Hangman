@@ -1,3 +1,4 @@
+import random
 #Informations about the game
 #-----------------------
 #Variables:
@@ -13,10 +14,19 @@ game_set = True
 game_con = True
 counter = 0
 
+list_with_singers = [
+    "zbigniew wodecki",
+    "elton john",
+    "scott mckenzie",
+    "johnny cash",
+    "richard chamberlain",
+    "michael jackson"
+    ]
+
 #Stars appearing
 #print("Polish singer")
-listPasswd = list("Zbigniew Wodecki".upper())
-strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
+#listPasswd = list("Zbigniew Wodecki".upper())
+#strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
 #print(strUnpasswd)
 
 while game_con:
@@ -29,11 +39,11 @@ while game_con:
     if remote_control == "2":
         game_con = False
     
-    while game_set & game_con:
-        
-        #Taking the passwd from list and display it
-        
-        
+    #Taking the passwd from list and display it
+    listPasswd = list(random.choice(list_with_singers).upper())
+    strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
+    
+    while game_set & game_con:     
         #Checking loop for condition if n==letter_from_passwd
         listUnpasswd = list(strUnpasswd)
         n = input("Enter a letter: ").upper()
@@ -54,9 +64,13 @@ while game_con:
         #Checking if counter is lower than 7, if not then game is over
         if counter == 7:
             game_set = False
+            print("\n----------------\n")
             print("Oh no! You lost!")
-    
+            print("\n----------------\n")
         if "*" not in listUnpasswd:
             game_set = False
+            print("\n------------------------\n")
             print("Congratulation! You won!")
+            print("\n------------------------\n")
+
     
