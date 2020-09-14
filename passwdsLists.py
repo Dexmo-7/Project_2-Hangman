@@ -7,3 +7,16 @@ listWithSingers = [
     "richard chamberlain",
     "michael jackson"
     ]
+
+listWithCountries = [
+    "poland",
+    "germany",
+    "france",
+    "italy",
+    "burkina faso",
+    "costa rica",
+    "argentina",
+    "chile",
+    "russia",
+    "mexico"
+    ]
