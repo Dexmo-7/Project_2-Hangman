@@ -15,11 +15,11 @@ from passwdsLists import listWithSingers
 from passwdsLists import listWithCountries
 
 #Starting conditions
-game_set = True
 game_con = True
 counter = 0
 
 while game_con:
+    game_set = True
     #Some text to make the game more interactive
     print("Hello! Choose game mode:")
     print("1. Singers")
@@ -39,7 +39,10 @@ while game_con:
         game_con = False
         print("Bye!\n")
     else:
-        print("Try again...")
+        print("Try again...\n")
+        game_set = False
+        #by default
+        listPasswd = list(random.choice(listWithSingers).upper())
     #Stars appearing
     strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
     
