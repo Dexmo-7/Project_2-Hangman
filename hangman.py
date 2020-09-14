@@ -10,6 +10,7 @@
 
 #imported modules
 import random
+from gallows import gallows
 from passwdsLists import listWithSingers
 from passwdsLists import listWithCountries
 
@@ -26,14 +27,19 @@ while game_con:
     print("3. EXIT")
     
     remote_control = input()
-    if remote_control == "3":
-        game_con = False
     
     #Taking the passwd from list and display it
     if remote_control == "1":
         listPasswd = list(random.choice(listWithSingers).upper())
+        print("You choose mode: Singers!\n")
     elif remote_control == "2":
         listPasswd = list(random.choice(listWithCountries).upper())
+        print("You choose mode: Countries!\n")
+    elif remote_control == "3":
+        game_con = False
+        print("Bye!\n")
+    else:
+        print("Try again...")
     #Stars appearing
     strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
     
@@ -52,19 +58,21 @@ while game_con:
     
         #Confirmation that gamer choose good letter, if not then increase the counter
         if innerCounter == 0:
+            #print(f"Damn, you made {counter}/8 bad decision...")
+            print(gallows[counter])
             counter += 1
-            print(f"Damn, you made {counter}/7 bad decision...")
     
-        #Checking if counter is lower than 7, if not then game is over
-        if counter == 7:
+        #Checking if counter is lower than 8, if not then game is over
+        if counter == 8:
             game_set = False
             print("\n----------------\n")
+            #print(gallows[-1])
             print("Oh no! You lost!")
             print("\n----------------\n")
+            
         if "*" not in listUnpasswd:
             game_set = False
             print("\n------------------------\n")
             print("Congratulation! You won!")
             print("\n------------------------\n")
-
     
