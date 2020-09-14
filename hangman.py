@@ -11,6 +11,7 @@
 #imported modules
 import random
 from passwdsLists import listWithSingers
+from passwdsLists import listWithCountries
 
 #Starting conditions
 game_set = True
@@ -21,14 +22,18 @@ while game_con:
     #Some text to make the game more interactive
     print("Hello! Choose game mode:")
     print("1. Singers")
-    print("2. EXIT")
+    print("2. Countries")
+    print("3. EXIT")
     
     remote_control = input()
-    if remote_control == "2":
+    if remote_control == "3":
         game_con = False
     
     #Taking the passwd from list and display it
-    listPasswd = list(random.choice(listWithSingers).upper())
+    if remote_control == "1":
+        listPasswd = list(random.choice(listWithSingers).upper())
+    elif remote_control == "2":
+        listPasswd = list(random.choice(listWithCountries).upper())
     #Stars appearing
     strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
     
