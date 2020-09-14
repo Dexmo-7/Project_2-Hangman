@@ -1,4 +1,3 @@
-import random
 #Informations about the game
 #-----------------------
 #Variables:
@@ -9,25 +8,14 @@ import random
 #innerCounter - counter which show Gamer chose good letter, if not the main counter will be increased
 #game_set - when game_set is False, game is over (bad or good way)
 
+#imported modules
+import random
+from passwdsLists import listWithSingers
+
 #Starting conditions
 game_set = True
 game_con = True
 counter = 0
-
-list_with_singers = [
-    "zbigniew wodecki",
-    "elton john",
-    "scott mckenzie",
-    "johnny cash",
-    "richard chamberlain",
-    "michael jackson"
-    ]
-
-#Stars appearing
-#print("Polish singer")
-#listPasswd = list("Zbigniew Wodecki".upper())
-#strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
-#print(strUnpasswd)
 
 while game_con:
     #Some text to make the game more interactive
@@ -40,7 +28,8 @@ while game_con:
         game_con = False
     
     #Taking the passwd from list and display it
-    listPasswd = list(random.choice(list_with_singers).upper())
+    listPasswd = list(random.choice(listWithSingers).upper())
+    #Stars appearing
     strUnpasswd = ''.join(["*" if item.isalpha() else ' ' for item in listPasswd])
     
     while game_set & game_con:     
