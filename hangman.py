@@ -16,10 +16,10 @@ from passwdsLists import listWithCountries
 
 #Starting conditions
 game_con = True
-counter = 0
 
 while game_con:
     game_set = True
+    counter = 0
     #Some text to make the game more interactive
     print("Hello! Choose game mode:")
     print("1. Singers")
